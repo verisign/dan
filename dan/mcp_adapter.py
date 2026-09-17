@@ -1,7 +1,7 @@
 import asyncio
 import re
 from dataclasses import dataclass
-import httpx
+import httpx2
 
 @dataclass
 class MCPCapabilityResult:
@@ -14,10 +14,10 @@ async def _list_tools_streamable_http(service_endpoint: str, auth_token: str | N
     from mcp.client.streamable_http import streamable_http_client
 
     headers = {"Authorization": f"Bearer {auth_token}"} if auth_token else None
-    custom_client = httpx.AsyncClient(headers=headers)
+    custom_client = httpx2.AsyncClient(headers=headers)
 
     def custom_client_factory():
-        return httpx.AsyncClient(headers=headers)
+        return httpx2.AsyncClient(headers=headers)
 
     try:
         # Newer SDK versions accept headers as a keyword argument.
