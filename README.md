@@ -19,7 +19,7 @@ DAN records are generated using RFC3597 presentation format, allowing them to be
 ---
 
 ## Installation
-
+Ensure you have Python 3.14.7 or greater.
 ```bash
 # Clone the repo
 git clone git@github.vrsn.com:product-architecture/dan.git
