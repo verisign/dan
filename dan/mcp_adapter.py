@@ -35,7 +35,7 @@ async def _list_tools_streamable_http(service_endpoint: str, auth_token: str | N
                 client_cm = streamable_http_client(service_endpoint)
 
     async with custom_client:
-        async with client_cm as (read, write, _):
+        async with client_cm as (read, write):
             async with ClientSession(read, write) as session:
                 await session.initialize()
                 response = await session.list_tools()
